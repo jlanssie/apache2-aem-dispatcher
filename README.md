@@ -7,19 +7,37 @@ Basic Apache2 Dispatcher setup for AEM in Ubuntu
 2) add the dispatcher.so file into mods-available directory
 3) make a symlink from inside the conf-enabled directory to the httpd.conf file inside conf-available
     
-    sudo ln -s /etc/apache2/conf-available/httpd.conf /etc/apache2/conf-enabled/httpd.conf
+```sh
+sudo ln -s /etc/apache2/conf-available/httpd.conf /etc/apache2/conf-enabled/httpd.conf
+```
+
+And  check the configuration
+
+```sh
+    apachectl configtest
+```
+
+It may thrown an error that the logs directory does not exist, in that case, add it and retest if the config is correct.
+
+```sh
+sudo mkdir /etc/apache2/logs
+```
 
 4) restart apache2 
-	
-	sudo systemctl restart apache2.service
+
+```sh
+    sudo systemctl restart apache2.service
+```
 
 5) check the status of apache2
-
+```sh
 	sudo systemctl status apache2.service
+```
 
 6) check the error log for errors
-	
+```sh
 	cat /var/log/apache2/error.log
+```
 
 7) test if the dispatcher is up for vanilla aem install by visiting http://localhost/content/we-retail/us/en.html
 
