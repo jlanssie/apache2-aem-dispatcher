@@ -31,12 +31,12 @@ sudo systemctl restart apache2.service
 
 5) check the status of apache2
 ```sh
-	sudo systemctl status apache2.service
+sudo systemctl status apache2.service
 ```
 
 6) check the error log for errors
 ```sh
-	cat /var/log/apache2/error.log
+cat /var/log/apache2/error.log
 ```
 
 7) test if the dispatcher is up for vanilla aem install by visiting http://localhost/content/we-retail/us/en.html
