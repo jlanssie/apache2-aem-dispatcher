@@ -14,7 +14,7 @@ sudo ln -s /etc/apache2/conf-available/httpd.conf /etc/apache2/conf-enabled/http
 And  check the configuration
 
 ```sh
-    apachectl configtest
+apachectl configtest
 ```
 
 It may thrown an error that the logs directory does not exist, in that case, add it and retest if the config is correct.
@@ -26,7 +26,7 @@ sudo mkdir /etc/apache2/logs
 4) restart apache2 
 
 ```sh
-    sudo systemctl restart apache2.service
+sudo systemctl restart apache2.service
 ```
 
 5) check the status of apache2
